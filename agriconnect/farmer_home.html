@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect - Farmer Dashboard</title>
+    <link rel="stylesheet" href="farmer_home.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <svg class="header-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 10 Q30 30 30 50 T50 90 Q70 70 70 50 T50 10" fill="#2d5016"/>
+                    <circle cx="50" cy="35" r="8" fill="#7cb342"/>
+                    <circle cx="40" cy="50" r="6" fill="#7cb342"/>
+                    <circle cx="60" cy="50" r="6" fill="#7cb342"/>
+                    <circle cx="50" cy="65" r="7" fill="#7cb342"/>
+                </svg>
+                <div class="header-title">
+                    <h1>AgriConnect</h1>
+                    <p class="farmer-greeting" id="farmerGreeting">Welcome back, Farmer</p>
+                </div>
+            </div>
+            <button class="logout-button" id="logoutButton">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+                <span>Logout</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="welcome-text">
+                <h2 class="section-title">What would you like to see today?</h2>
+                <p class="section-subtitle">Choose a view to get insights about your farm</p>
+            </div>
+            <div class="welcome-illustration">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Sun -->
+                    <circle cx="40" cy="40" r="20" fill="#ffd54f" opacity="0.8"/>
+                    <!-- Field -->
+                    <rect x="0" y="120" width="200" height="80" fill="#7cb342" opacity="0.3"/>
+                    <rect x="0" y="140" width="200" height="60" fill="#558b2f" opacity="0.2"/>
+                    <!-- Crops -->
+                    <path d="M30 140 Q30 110 40 100 L40 140" fill="#2d5016"/>
+                    <path d="M70 140 Q70 100 80 90 L80 140" fill="#2d5016"/>
+                    <path d="M110 140 Q110 105 120 95 L120 140" fill="#2d5016"/>
+                    <path d="M150 140 Q150 115 160 105 L160 140" fill="#2d5016"/>
+                    <circle cx="40" cy="95" r="8" fill="#7cb342"/>
+                    <circle cx="80" cy="85" r="9" fill="#7cb342"/>
+                    <circle cx="120" cy="90" r="8" fill="#7cb342"/>
+                    <circle cx="160" cy="100" r="9" fill="#7cb342"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Dashboard Options Grid -->
+        <section class="dashboard-grid">
+
+            <!-- Option 7: UAV Flight Control -->
+<article class="dashboard-card" data-view="uav">
+    <div class="card-icon uav-icon">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <!-- Drone body -->
+            <rect x="26" y="28" width="12" height="8" rx="2" fill="currentColor"/>
+            <!-- Propellers -->
+            <circle cx="20" cy="20" r="6" fill="currentColor" opacity="0.7"/>
+            <circle cx="44" cy="20" r="6" fill="currentColor" opacity="0.7"/>
+            <circle cx="20" cy="44" r="6" fill="currentColor" opacity="0.7"/>
+            <circle cx="44" cy="44" r="6" fill="currentColor" opacity="0.7"/>
+            <!-- Arms -->
+            <line x1="26" y1="32" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
+            <line x1="38" y1="32" x2="44" y2="20" stroke="currentColor" stroke-width="2"/>
+            <line x1="26" y1="32" x2="20" y2="44" stroke="currentColor" stroke-width="2"/>
+            <line x1="38" y1="32" x2="44" y2="44" stroke="currentColor" stroke-width="2"/>
+            <!-- Camera -->
+            <circle cx="32" cy="38" r="3" fill="#fff"/>
+        </svg>
+    </div>
+    <div class="card-content">
+        <h3 class="card-title">UAV Flight Control</h3>
+        <p class="card-description">Schedule and monitor drone field surveys</p>
+    </div>
+    <div class="card-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+    </div>
+    <div class="card-decoration">
+        <div class="decoration-circle"></div>
+        <div class="decoration-circle"></div>
+    </div>
+</article>
+            <!-- Option 1: Crop Health -->
+            <article class="dashboard-card" data-view="health">
+                <div class="card-icon health-icon">
+                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32 52 L12 32 Q8 28 8 22 Q8 16 12 12 Q16 8 22 8 Q28 8 32 12 Q36 8 42 8 Q48 8 52 12 Q56 16 56 22 Q56 28 52 32 Z" fill="currentColor"/>
+                        <circle cx="32" cy="26" r="3" fill="#fff"/>
+                        <path d="M26 32 L28 34 L32 30 L36 34 L38 32" stroke="#fff" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Crop Health</h3>
+                    <p class="card-description">Monitor overall field health and growth status</p>
+                </div>
+                <div class="card-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+                <div class="card-decoration">
+                    <div class="decoration-circle"></div>
+                    <div class="decoration-circle"></div>
+                </div>
+            </article>
+
+            <!-- Option 2: Pest & Disease Risk -->
+            <article class="dashboard-card" data-view="pest">
+                <div class="card-icon pest-icon">
+                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="32" cy="32" rx="16" ry="20" fill="currentColor"/>
+                        <circle cx="26" cy="28" r="3" fill="#fff"/>
+                        <circle cx="38" cy="28" r="3" fill="#fff"/>
+                        <path d="M20 20 Q16 16 12 18" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M20 28 Q16 28 12 30" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M44 20 Q48 16 52 18" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M44 28 Q48 28 52 30" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Pest & Disease Risk</h3>
+                    <p class="card-description">Identify and prevent potential threats</p>
+                </div>
+                <div class="card-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+                <div class="card-decoration">
+                    <div class="decoration-circle"></div>
+                    <div class="decoration-circle"></div>
+                </div>
+            </article>
+
+            <!-- Option 3: Nutrient Status -->
+            <article class="dashboard-card" data-view="nutrient">
+                <div class="card-icon nutrient-icon">
+                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="16" width="24" height="36" rx="4" fill="currentColor"/>
+                        <rect x="24" y="22" width="16" height="6" fill="#fff" opacity="0.9"/>
+                        <rect x="24" y="32" width="16" height="4" fill="#fff" opacity="0.7"/>
+                        <rect x="24" y="40" width="16" height="4" fill="#fff" opacity="0.5"/>
+                        <circle cx="32" cy="10" r="4" fill="currentColor"/>
+                        <rect x="30" y="10" width="4" height="6" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Nutrient Status</h3>
+                    <p class="card-description">Check soil nutrients and deficiencies</p>
+                </div>
+                <div class="card-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+                <div class="card-decoration">
+                    <div class="decoration-circle"></div>
+                    <div class="decoration-circle"></div>
+                </div>
+            </article>
+
+            <!-- Option 4: Yield Outlook -->
+            <article class="dashboard-card" data-view="yield">
+                <div class="card-icon yield-icon">
+                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 48 L20 32 L28 40 L40 20 L52 32 L52 48 Z" fill="currentColor" opacity="0.3"/>
+                        <polyline points="12 48 20 32 28 40 40 20 52 32" stroke="currentColor" stroke-width="3" fill="none"/>
+                        <circle cx="20" cy="32" r="3" fill="currentColor"/>
+                        <circle cx="28" cy="40" r="3" fill="currentColor"/>
+                        <circle cx="40" cy="20" r="3" fill="currentColor"/>
+                        <circle cx="52" cy="32" r="3" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Yield Outlook</h3>
+                    <p class="card-description">Forecast harvest and production estimates</p>
+                </div>
+                <div class="card-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+                <div class="card-decoration">
+                    <div class="decoration-circle"></div>
+                    <div class="decoration-circle"></div>
+                </div>
+            </article>
+
+            <!-- Option 5: Field Zones -->
+            <article class="dashboard-card" data-view="zones">
+                <div class="card-icon zones-icon">
+                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="12" y="12" width="40" height="40" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <line x1="32" y1="12" x2="32" y2="52" stroke="currentColor" stroke-width="2"/>
+                        <line x1="12" y1="32" x2="52" y2="32" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="22" cy="22" r="4" fill="currentColor" opacity="0.6"/>
+                        <circle cx="42" cy="22" r="4" fill="currentColor" opacity="0.8"/>
+                        <circle cx="22" cy="42" r="4" fill="currentColor" opacity="0.4"/>
+                        <circle cx="42" cy="42" r="4" fill="currentColor" opacity="0.9"/>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Field Zones</h3>
+                    <p class="card-description">View zone-wise field analysis map</p>
+                </div>
+                <div class="card-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+                <div class="card-decoration">
+                    <div class="decoration-circle"></div>
+                    <div class="decoration-circle"></div>
+                </div>
+            </article>
+
+            <!-- Option 6: Recommendations -->
+            <article class="dashboard-card" data-view="recommendations">
+                <div class="card-icon recommendations-icon">
+                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32 8 L38 24 L56 24 L42 36 L48 52 L32 42 L16 52 L22 36 L8 24 L26 24 Z" fill="currentColor"/>
+                        <circle cx="32" cy="32" r="8" fill="#fff" opacity="0.3"/>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Recommendations</h3>
+                    <p class="card-description">Get AI-powered farming advice</p>
+                </div>
+                <div class="card-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+                <div class="card-decoration">
+                    <div class="decoration-circle"></div>
+                    <div class="decoration-circle"></div>
+                </div>
+            </article>
+        </section>
+        
+<section class="anomaly-section">
+    <div class="anomaly-card" id="anomalyCard">
+        <div class="anomaly-header">
+            <div class="anomaly-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <path d="M12 8v4M12 16h.01"/>
+                </svg>
+            </div>
+            <div class="anomaly-header-content">
+                <h3 class="anomaly-title">UAV Integrity & Anomaly Status</h3>
+                <p class="anomaly-status" id="anomalyStatus">Checking system...</p>
+                <span class="officer-alert-badge" id="officerAlertBadge" style="display: none;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/>
+                    </svg>
+                    Officer Notified
+                </span>
+            </div>
+            <div class="anomaly-level-badge">
+                <span class="anomaly-level" id="anomalyLevel">—</span>
+            </div>
+        </div>
+        
+        <div class="anomaly-body">
+            <!-- Anomaly Types -->
+            <div class="anomaly-row">
+                <div class="anomaly-label">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="16" x2="12" y2="12"/>
+                        <line x1="12" y1="8" x2="12.01" y2="8"/>
+                    </svg>
+                    Detected Issues:
+                </div>
+                <div class="anomaly-value" id="anomalyTypes">
+                    <span class="anomaly-tag">Loading...</span>
+                </div>
+            </div>
+            
+            <!-- Confidence Score -->
+            <div class="anomaly-row">
+                <div class="anomaly-label">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    Detection Confidence:
+                </div>
+                <div class="anomaly-value">
+                    <span id="anomalyConfidence">—</span>
+                    <div class="confidence-bar-container">
+                        <div class="confidence-bar" id="confidenceBar"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Impact Message -->
+            <div class="anomaly-impact-box">
+                <div class="impact-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                </div>
+                <div class="impact-content">
+                    <div class="impact-label">Impact Assessment:</div>
+                    <div class="impact-text" id="anomalyImpact">Loading impact analysis...</div>
+                </div>
+            </div>
+            
+            <!-- Recommended Actions -->
+            <div class="anomaly-actions-box">
+                <div class="actions-header">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 11 12 14 22 4"/>
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                    </svg>
+                    Recommended Actions:
+                </div>
+                <ul class="actions-list" id="anomalyActions">
+                    <li class="action-item">Loading recommendations...</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   <!-- Footer -->
+    <footer class="footer">
+        <p>AgriConnect &copy; 2026 | Empowering farmers with smart insights</p>
+    </footer>
+
+    <!-- UAV Flight Manager (MUST BE FIRST) -->
+    <script src="uav_flight_manager.js"></script>
+    <script src="farmer_home.js"></script>
+</body>
+</html>

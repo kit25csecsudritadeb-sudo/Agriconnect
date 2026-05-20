@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect - Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- Background Decorative Elements -->
+    <div class="bg-decoration">
+        <div class="leaf leaf-1"></div>
+        <div class="leaf leaf-2"></div>
+        <div class="leaf leaf-3"></div>
+        <div class="crop crop-1"></div>
+        <div class="crop crop-2"></div>
+    </div>
+
+    <!-- Main Login Container -->
+    <main class="login-container">
+        <div class="login-card">
+            <!-- Logo/Header Section -->
+            <div class="logo-section">
+                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 10 Q30 30 30 50 T50 90 Q70 70 70 50 T50 10" fill="#2d5016"/>
+                    <circle cx="50" cy="35" r="8" fill="#7cb342"/>
+                    <circle cx="40" cy="50" r="6" fill="#7cb342"/>
+                    <circle cx="60" cy="50" r="6" fill="#7cb342"/>
+                    <circle cx="50" cy="65" r="7" fill="#7cb342"/>
+                </svg>
+                <h1 class="app-title">AgriConnect</h1>
+                <p class="app-subtitle">Smart Farming Solutions</p>
+            </div>
+
+            <!-- Login Form -->
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                    <div class="input-wrapper">
+                        <span class="country-code">+91</span>
+                        <input 
+                            type="tel" 
+                            id="phoneNumber" 
+                            class="form-input" 
+                            placeholder="Enter your phone number"
+                            pattern="[0-9]{10}"
+                            maxlength="10"
+                            required
+                            autocomplete="tel"
+                        >
+                    </div>
+                    <span class="input-hint">Enter 10-digit mobile number</span>
+                </div>
+
+                <button type="submit" class="login-button" id="loginButton">
+                    <span class="button-text">Login</span>
+                    <span class="button-loader"></span>
+                </button>
+
+                <div class="error-message" id="errorMessage"></div>
+            </form>
+
+<!-- Footer -->
+    <footer class="login-footer">
+        <p>Empowering farmers with AI-driven insights</p>
+    </footer>
+
+    <!-- UAV Flight Manager (MUST BE FIRST) -->
+    <script src="uav_flight_manager.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

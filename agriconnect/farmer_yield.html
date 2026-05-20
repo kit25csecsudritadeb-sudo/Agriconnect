@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yield Outlook - AgriConnect</title>
+    <link rel="stylesheet" href="farmer_yield.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <button class="back-button" id="backButton">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                <span>Back</span>
+            </button>
+            <div class="header-title">
+                <h1>Yield Outlook</h1>
+            </div>
+            <button class="refresh-button" id="refreshButton">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Loading State -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-chart">
+            <div class="chart-bar bar-1"></div>
+            <div class="chart-bar bar-2"></div>
+            <div class="chart-bar bar-3"></div>
+            <div class="chart-bar bar-4"></div>
+        </div>
+        <p class="loading-text">Calculating yield forecast...</p>
+    </div>
+
+    <!-- Error State -->
+    <div class="error-container" id="errorContainer" style="display: none;">
+        <div class="error-content">
+            <svg class="error-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            <h2>Unable to load data</h2>
+            <p id="errorMessage">Something went wrong. Please try again.</p>
+            <button class="retry-button" id="retryButton">Retry</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent" style="display: none;">
+        
+        <!-- Yield Impact Hero -->
+        <section class="yield-hero">
+            <div class="yield-hero-bg">
+                <div class="grain-particle"></div>
+                <div class="grain-particle"></div>
+                <div class="grain-particle"></div>
+            </div>
+            <div class="yield-grid">
+                <div class="yield-stat-card impact-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                        </svg>
+                    </div>
+                    <p class="stat-label">Yield Impact</p>
+                    <p class="stat-value impact-value" id="yieldImpact">—</p>
+                    <p class="stat-note">Predicted change</p>
+                </div>
+                
+                <div class="yield-stat-card risk-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                            <line x1="12" y1="9" x2="12" y2="13"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                    </div>
+                    <p class="stat-label">Risk Level</p>
+                    <p class="stat-value risk-value" id="yieldRisk">—</p>
+                    <p class="stat-note">Current assessment</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Financial Impact -->
+        <section class="card-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="1" x2="12" y2="23"/>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                    Financial Impact Estimate
+                </h2>
+            </div>
+            <div class="financial-card card-content">
+                <div class="cost-breakdown">
+                    <div class="cost-item">
+                        <span class="cost-label">Base Yield:</span>
+                        <span class="cost-value">30 quintals</span>
+                    </div>
+                    <div class="cost-item">
+                        <span class="cost-label">Price per Quintal:</span>
+                        <span class="cost-value">₹2,000</span>
+                    </div>
+                    <div class="cost-item">
+                        <span class="cost-label">Expected Revenue:</span>
+                        <span class="cost-value">₹60,000</span>
+                    </div>
+                </div>
+                
+                <div class="loss-estimate">
+                    <div class="loss-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                            <polyline points="17 6 23 6 23 12"/>
+                        </svg>
+                    </div>
+                    <div class="loss-content">
+                        <p class="loss-label">Estimated Loss</p>
+                        <p class="loss-value" id="estimatedLoss">₹ —</p>
+                        <p class="loss-note" id="lossNote">Based on predicted yield impact</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prediction Details -->
+        <section class="card-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    Prediction Details
+                </h2>
+            </div>
+            <div class="prediction-card card-content">
+                <div class="prediction-grid">
+                    <div class="prediction-item">
+                        <div class="prediction-label">Baseline Yield:</div>
+                        <div class="prediction-value" id="baselineYield">—</div>
+                    </div>
+                    <div class="prediction-item">
+                        <div class="prediction-label">Confidence Level:</div>
+                        <div class="prediction-value" id="confidenceLevel">—</div>
+                    </div>
+                </div>
+                <div class="prediction-note" id="predictionNote">
+                    Loading prediction details...
+                </div>
+            </div>
+        </section>
+
+        <!-- Contributing Factors -->
+        <section class="card-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="8" y1="6" x2="21" y2="6"/>
+                        <line x1="8" y1="12" x2="21" y2="12"/>
+                        <line x1="8" y1="18" x2="21" y2="18"/>
+                        <line x1="3" y1="6" x2="3.01" y2="6"/>
+                        <line x1="3" y1="12" x2="3.01" y2="12"/>
+                        <line x1="3" y1="18" x2="3.01" y2="18"/>
+                    </svg>
+                    Contributing Factors
+                </h2>
+            </div>
+            <div class="factors-grid">
+                <!-- Pest Factor -->
+                <div class="factor-card card-content">
+                    <div class="factor-header">
+                        <div class="factor-icon pest-factor">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z"/>
+                            </svg>
+                        </div>
+                        <h3 class="factor-title">Pest Risk</h3>
+                    </div>
+                    <div class="factor-content">
+                        <div class="factor-stat">
+                            <span class="factor-label">Severity:</span>
+                            <span class="factor-value" id="pestSeverity">—</span>
+                        </div>
+                        <div class="factor-stat">
+                            <span class="factor-label">Impact:</span>
+                            <span class="factor-value" id="pestImpact">—</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nutrient Factor -->
+                <div class="factor-card card-content">
+                    <div class="factor-header">
+                        <div class="factor-icon nutrient-factor">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3h18v18H3z"/>
+                                <line x1="3" y1="9" x2="21" y2="9"/>
+                            </svg>
+                        </div>
+                        <h3 class="factor-title">Nutrient Health</h3>
+                    </div>
+                    <div class="factor-content">
+                        <div class="factor-stat">
+                            <span class="factor-label">Deficiency:</span>
+                            <span class="factor-value" id="nutrientDeficiency">—</span>
+                        </div>
+                        <div class="factor-stat">
+                            <span class="factor-label">Impact:</span>
+                            <span class="factor-value" id="nutrientImpact">—</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations -->
+        <section class="card-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 11 12 14 22 4"/>
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                    </svg>
+                    Actions to Improve Yield
+                </h2>
+            </div>
+            <div class="recommendations-list" id="recommendationsList">
+                <!-- Recommendations will be inserted here -->
+            </div>
+        </section>
+
+    </main>
+    <script src="uav_flight_manager.js"></script>
+    <script src="farmer_yield.js"></script>
+</body>
+</html>

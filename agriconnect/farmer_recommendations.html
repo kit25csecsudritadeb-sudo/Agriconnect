@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Recommendations - AgriConnect</title>
+    <link rel="stylesheet" href="farmer_recommendations.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <button class="back-button" id="backButton">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                <span>Back</span>
+            </button>
+            <div class="header-title">
+                <h1>Smart Treatment Recommendations</h1>
+            </div>
+            <button class="refresh-button" id="refreshButton">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Loading State -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-pulse">
+            <div class="pulse-ring"></div>
+            <div class="pulse-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2v20M2 12h20"/>
+                </svg>
+            </div>
+        </div>
+        <p class="loading-text">Analyzing field conditions...</p>
+    </div>
+
+    <!-- Error State -->
+    <div class="error-container" id="errorContainer" style="display: none;">
+        <div class="error-content">
+            <svg class="error-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            <h2>Unable to load recommendations</h2>
+            <p id="errorMessage">Please check your connection and try again.</p>
+            <button class="retry-button" id="retryButton">Retry</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent" style="display: none;">
+        
+        <!-- Field Status Overview -->
+        <section class="status-banner" id="statusBanner">
+            <div class="status-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                    <line x1="12" y1="9" x2="12" y2="13"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+            </div>
+            <div class="status-content">
+                <h2 class="status-title">Field Status: <span id="overallStatus">—</span></h2>
+                <p class="status-description" id="statusDescription">Loading field analysis...</p>
+            </div>
+        </section>
+
+        <!-- Recommendations Grid -->
+        <section class="recommendations-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 11l3 3L22 4"/>
+                        <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                    </svg>
+                    Actionable Treatment Plan
+                </h2>
+                <p class="section-subtitle">Generated based on current field conditions and disease analysis</p>
+            </div>
+            
+            <div class="recommendations-grid" id="recommendationsGrid">
+                <!-- Recommendations will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState" style="display: none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <h3>All Clear!</h3>
+            <p>No critical actions required at this time. Continue monitoring field conditions.</p>
+        </div>
+
+    </main>
+
+    <script src="farmer_recommendations.js"></script>
+</body>
+</html>

@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAV Flight Manager - Smart Farming</title>
+    <style>
+        /* ===== BASE VARIABLES ===== */
+        :root {
+            --primary-green: #2d5016;
+            --primary-green-light: #3d6b1f;
+            --accent-green: #7cb342;
+            --accent-green-light: #9ccc65;
+            --accent-purple: #ab47bc;
+            --accent-orange: #ff8a65;
+            --accent-blue: #42a5f5;
+            --accent-red: #ef5350;
+            --bg-cream: #f8f9f4;
+            --bg-white: #ffffff;
+            --bg-light: #fafbf7;
+            --text-dark: #2c3e20;
+            --text-gray: #5a6c50;
+            --text-light: #8a9a7e;
+            --border-color: #d4e2c6;
+            --shadow-light: rgba(45, 80, 22, 0.08);
+            --shadow-medium: rgba(45, 80, 22, 0.15);
+            --shadow-hover: rgba(45, 80, 22, 0.25);
+            
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px var(--shadow-light);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-title h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .header-title svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .back-button,
+        .refresh-button {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            background: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+
+        .back-button svg,
+        .refresh-button svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .back-button:hover,
+        .refresh-button:hover {
+            background: var(--bg-cream);
+            color: var(--primary-green);
+            border-color: var(--accent-green);
+            transform: translateY(-1px);
+        }
+
+        .refresh-button {
+            padding: var(--spacing-xs);
+        }
+
+        .refresh-button.spinning svg {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-lg);
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== FLIGHT STATUS HERO (Animated Drone Particles) ===== */
+        .flight-hero {
+            position: relative;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #64b5f6 100%);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(66, 165, 245, 0.3);
+        }
+
+        .flight-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+        }
+
+        .drone-particle {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            opacity: 0.2;
+            animation: drone-float 8s ease-in-out infinite;
+        }
+
+        .drone-particle:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .drone-particle:nth-child(2) {
+            left: 50%;
+            animation-delay: 2s;
+        }
+
+        .drone-particle:nth-child(3) {
+            left: 80%;
+            animation-delay: 4s;
+        }
+
+        @keyframes drone-float {
+            0%, 100% {
+                top: 20%;
+                transform: translateX(0) rotate(0deg);
+            }
+            25% {
+                top: 40%;
+                transform: translateX(20px) rotate(10deg);
+            }
+            50% {
+                top: 60%;
+                transform: translateX(-10px) rotate(-5deg);
+            }
+            75% {
+                top: 40%;
+                transform: translateX(15px) rotate(8deg);
+            }
+        }
+
+        .flight-status-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+        }
+
+        .flight-status-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            text-align: center;
+            transition: all var(--transition-normal);
+            backdrop-filter: blur(10px);
+        }
+
+        .flight-status-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .status-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto var(--spacing-sm);
+            background: linear-gradient(135deg, var(--accent-blue), #64b5f6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .status-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .status-label {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .status-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: var(--spacing-xs);
+            animation: scaleIn 0.5s ease;
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .status-note {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-badge.planned {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .status-badge.ready {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+
+        .status-badge.flying {
+            background: #e8f5e9;
+            color: #388e3c;
+        }
+
+        .status-badge.completed {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+
+        /* ===== SECTION COMMON ===== */
+        .card-section {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .section-header {
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .section-title svg {
+            width: 24px;
+            height: 24px;
+            color: var(--accent-green);
+        }
+
+        .card-content {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: 0 2px 8px var(--shadow-light);
+            transition: all var(--transition-normal);
+        }
+
+        .card-content:hover {
+            box-shadow: 0 4px 16px var(--shadow-medium);
+        }
+
+        /* ===== FLIGHT CONTROLS ===== */
+        .flight-controls {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+        }
+
+        .control-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+
+        .control-button svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .control-button.primary {
+            background: var(--accent-green);
+            color: white;
+        }
+
+        .control-button.primary:hover {
+            background: var(--accent-green-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(124, 179, 66, 0.4);
+        }
+
+        .control-button.secondary {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+        }
+
+        .control-button.secondary:hover {
+            background: var(--bg-white);
+            border-color: var(--accent-green);
+            transform: translateY(-2px);
+        }
+
+        .control-button.danger {
+            background: var(--accent-red);
+            color: white;
+        }
+
+        .control-button.danger:hover {
+            background: #e53935;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(239, 83, 80, 0.4);
+        }
+
+        .control-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* ===== FLIGHT PATH VISUALIZATION ===== */
+        .flight-path-container {
+            background: var(--bg-light);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .path-canvas {
+            width: 100%;
+            height: 300px;
+            background: white;
+            border-radius: var(--radius-sm);
+            border: 2px solid var(--border-color);
+        }
+
+        .path-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+        }
+
+        /* ===== FLIGHT STATS GRID ===== */
+        .flight-stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .stat-item {
+            padding: var(--spacing-sm);
+            background: var(--bg-light);
+            border-radius: var(--radius-sm);
+        }
+
+        .stat-item-label {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 4px;
+        }
+
+        .stat-item-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* ===== PROGRESS BARS ===== */
+        .progress-container {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .progress-label {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .progress-percentage {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .progress-bar-bg {
+            width: 100%;
+            height: 12px;
+            background: var(--bg-light);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-green), var(--accent-green-light));
+            border-radius: 6px;
+            transition: width var(--transition-slow);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        /* ===== WAYPOINTS LIST ===== */
+        .waypoints-list {
+            max-height: 400px;
+            overflow-y: auto;
+            display: grid;
+            gap: var(--spacing-sm);
+        }
+
+        .waypoint-item {
+            display: flex;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-left: 3px solid var(--accent-blue);
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-normal);
+        }
+
+        .waypoint-item:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px var(--shadow-medium);
+        }
+
+        .waypoint-item.completed {
+            border-left-color: var(--accent-green);
+            opacity: 0.7;
+        }
+
+        .waypoint-item.active {
+            border-left-color: var(--accent-orange);
+            background: linear-gradient(90deg, #fff3e0 0%, white 20%);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 10px rgba(255, 138, 101, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(255, 138, 101, 0.4);
+            }
+        }
+
+        .waypoint-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: var(--bg-light);
+            color: var(--text-gray);
+        }
+
+        .waypoint-item.active .waypoint-icon {
+            background: var(--accent-orange);
+            color: white;
+        }
+
+        .waypoint-item.completed .waypoint-icon {
+            background: var(--accent-green);
+            color: white;
+        }
+
+        .waypoint-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .waypoint-content {
+            flex: 1;
+        }
+
+        .waypoint-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .waypoint-details {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        .waypoint-time {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* ===== WEATHER INFO ===== */
+        .weather-card {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .weather-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .weather-icon {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-blue);
+        }
+
+        .weather-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .weather-temp {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .weather-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-sm);
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        /* ===== BATTERY INDICATOR ===== */
+        .battery-indicator {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .battery-icon {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-green);
+        }
+
+        .battery-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .battery-info {
+            flex: 1;
+        }
+
+        .battery-level {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .battery-status {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        .battery-indicator.low {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+        }
+
+        .battery-indicator.low .battery-icon {
+            color: var(--accent-red);
+        }
+
+        /* ===== IMAGES GALLERY ===== */
+        .images-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+
+        .image-placeholder {
+            aspect-ratio: 1;
+            background: var(--bg-light);
+            border: 2px dashed var(--border-color);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 0.75rem;
+            transition: all var(--transition-normal);
+        }
+
+        .image-placeholder:hover {
+            border-color: var(--accent-green);
+            background: white;
+        }
+
+        .image-placeholder svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* ===== EMPTY STATE ===== */
+        .empty-state {
+            text-align: center;
+            padding: var(--spacing-xl);
+        }
+
+        .empty-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--spacing-md);
+            background: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+        }
+
+        .empty-icon svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .empty-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .empty-text {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (min-width: 640px) {
+            .flight-status-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .flight-controls {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .flight-stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .main-content {
+                padding: var(--spacing-xl) var(--spacing-lg);
+            }
+
+            .flight-status-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .flight-controls {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* ===== LOADING STATE ===== */
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        /* ===== HIDDEN ===== */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-title">
+                <h1>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 3L4 9v12h16V9l-8-6z"/>
+                        <path d="M12 3v6M8 9l4 4 4-4"/>
+                    </svg>
+                    UAV Flight Manager
+                </h1>
+            </div>
+            <div class="header-actions">
+                <button class="refresh-button" onclick="refreshFlightData()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+                        <path d="M21 3v5h-5"/>
+                        <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
+                        <path d="M3 21v-5h5"/>
+                    </svg>
+                </button>
+                <button class="back-button" onclick="window.location.href='farmer_dashboard.html'">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Dashboard
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Flight Status Hero -->
+        <section class="flight-hero">
+            <div class="flight-hero-bg">
+                <svg class="drone-particle" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 3L4 9v12h16V9l-8-6z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                </svg>
+                <svg class="drone-particle" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 3L4 9v12h16V9l-8-6z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                </svg>
+                <svg class="drone-particle" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 3L4 9v12h16V9l-8-6z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                </svg>
+            </div>
+
+            <div class="flight-status-grid" id="flightStatusGrid">
+                <!-- Status cards will be inserted here -->
+            </div>
+        </section>
+
+        <!-- Flight Controls -->
+        <section class="card-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M9 9h6v6H9z"/>
+                    </svg>
+                    Flight Controls
+                </h2>
+            </div>
+            <div class="card-content">
+                <div class="flight-controls" id="flightControls">
+                    <!-- Control buttons will be inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Flight Path Visualization -->
+        <section class="card-section" id="flightPathSection">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12h18M12 3v18M7 7l10 10M17 7L7 17"/>
+                    </svg>
+                    Flight Path
+                </h2>
+            </div>
+            <div class="card-content">
+                <div class="flight-path-container">
+                    <canvas id="pathCanvas" class="path-canvas"></canvas>
+                    <div class="path-legend">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: var(--accent-green);"></div>
+                            <span>Completed</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: var(--accent-orange);"></div>
+                            <span>Current</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: var(--border-color);"></div>
+                            <span>Planned</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flight Statistics -->
+                <div class="flight-stats-grid" id="flightStatsGrid">
+                    <!-- Stats will be inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Flight Progress -->
+        <section class="card-section" id="flightProgressSection" class="hidden">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                    Flight Progress
+                </h2>
+            </div>
+            <div class="card-content">
+                <!-- Battery Indicator -->
+                <div class="battery-indicator" id="batteryIndicator">
+                    <div class="battery-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="7" width="17" height="10" rx="2"/>
+                            <path d="M22 10v4"/>
+                            <path d="M6 11h6"/>
+                        </svg>
+                    </div>
+                    <div class="battery-info">
+                        <div class="battery-level" id="batteryLevel">100%</div>
+                        <div class="battery-status">Battery Level</div>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-header">
+                        <span class="progress-label">Flight Progress</span>
+                        <span class="progress-percentage" id="progressPercentage">0%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" id="progressBarFill" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <!-- Weather Conditions -->
+                <div class="weather-card" id="weatherCard">
+                    <!-- Weather info will be inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Waypoints -->
+        <section class="card-section" id="waypointsSection">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    Flight Waypoints
+                </h2>
+            </div>
+            <div class="card-content">
+                <div class="waypoints-list" id="waypointsList">
+                    <!-- Waypoints will be inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Captured Images -->
+        <section class="card-section" id="imagesSection" class="hidden">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <circle cx="9" cy="9" r="2"/>
+                        <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+                    </svg>
+                    Captured Images
+                </h2>
+            </div>
+            <div class="card-content">
+                <div class="stat-item">
+                    <div class="stat-item-label">Images Captured</div>
+                    <div class="stat-item-value" id="capturedImagesCount">0</div>
+                </div>
+                <div class="images-preview" id="imagesPreview">
+                    <!-- Image placeholders will be inserted here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="uav_flight_manager.js"></script>
+    <script>
+        // Initialize the UAV interface
+        let currentFlight = null;
+        let progressInterval = null;
+
+        // Load flight data on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            initializeFlightInterface();
+        });
+
+        function initializeFlightInterface() {
+            currentFlight = window.UAVFlightManager.getCurrentFlight();
+            
+            if (currentFlight) {
+                renderFlightInterface(currentFlight);
+            } else {
+                showEmptyState();
+            }
+        }
+
+        function renderFlightInterface(flightData) {
+            renderFlightStatus(flightData);
+            renderFlightControls(flightData);
+            renderFlightPath(flightData);
+            renderFlightStats(flightData);
+            renderWaypoints(flightData);
+            renderWeather(flightData);
+            
+            if (flightData.status === 'flying') {
+                startProgressTracking();
+            }
+        }
+
+        function renderFlightStatus(flightData) {
+            const grid = document.getElementById('flightStatusGrid');
+            const statusBadgeClass = flightData.status.toLowerCase();
+            const statusLabel = flightData.status.charAt(0).toUpperCase() + flightData.status.slice(1);
+            
+            grid.innerHTML = `
+                <div class="flight-status-card">
+                    <div class="status-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 3L4 9v12h16V9l-8-6z"/>
+                        </svg>
+                    </div>
+                    <div class="status-label">Flight Status</div>
+                    <div class="status-value">
+                        <span class="status-badge ${statusBadgeClass}">${statusLabel}</span>
+                    </div>
+                    <div class="status-note">ID: ${flightData.flightId.slice(-8)}</div>
+                </div>
+
+                <div class="flight-status-card">
+                    <div class="status-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12h18M12 3v18"/>
+                        </svg>
+                    </div>
+                    <div class="status-label">Total Passes</div>
+                    <div class="status-value">${flightData.totalPasses}</div>
+                    <div class="status-note">Grid pattern</div>
+                </div>
+
+                <div class="flight-status-card">
+                    <div class="status-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0"/>
+                            <path d="M12 7v5l3 3"/>
+                        </svg>
+                    </div>
+                    <div class="status-label">Flight Time</div>
+                    <div class="status-value">${Math.round(flightData.totalFlightTime / 60)}</div>
+                    <div class="status-note">minutes</div>
+                </div>
+
+                <div class="flight-status-card">
+                    <div class="status-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="9" cy="9" r="2"/>
+                            <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+                        </svg>
+                    </div>
+                    <div class="status-label">Est. Images</div>
+                    <div class="status-value">${flightData.estimatedImages}</div>
+                    <div class="status-note">${flightData.capturedImages} captured</div>
+                </div>
+            `;
+        }
+
+        function renderFlightControls(flightData) {
+            const controls = document.getElementById('flightControls');
+            
+            if (flightData.status === 'planned') {
+                controls.innerHTML = `
+                    <button class="control-button primary" onclick="planNewFlight()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                        Plan New Flight
+                    </button>
+                    <button class="control-button primary" onclick="startFlight()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="5 3 19 12 5 21 5 3"/>
+                        </svg>
+                        Start Flight
+                    </button>
+                    <button class="control-button secondary" onclick="clearFlight()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                        </svg>
+                        Clear Plan
+                    </button>
+                `;
+            } else if (flightData.status === 'flying') {
+                controls.innerHTML = `
+                    <button class="control-button danger" onclick="emergencyStop()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <rect x="9" y="9" width="6" height="6"/>
+                        </svg>
+                        Emergency Stop
+                    </button>
+                    <button class="control-button secondary" disabled>
+                        <div class="loading-spinner"></div>
+                        Flight in Progress
+                    </button>
+                `;
+            } else if (flightData.status === 'completed') {
+                controls.innerHTML = `
+                    <button class="control-button primary" onclick="viewResults()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                        </svg>
+                        View Results
+                    </button>
+                    <button class="control-button primary" onclick="planNewFlight()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                        Plan New Flight
+                    </button>
+                    <button class="control-button secondary" onclick="clearFlight()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                        </svg>
+                        Clear Flight
+                    </button>
+                `;
+            }
+        }
+
+        function renderFlightPath(flightData) {
+            const canvas = document.getElementById('pathCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas size
+            canvas.width = canvas.offsetWidth;
+            canvas.height = 300;
+            
+            const padding = 40;
+            const width = canvas.width - 2 * padding;
+            const height = canvas.height - 2 * padding;
+            
+            // Scale factors
+            const scaleX = width / flightData.fieldDimensions.width;
+            const scaleY = height / flightData.fieldDimensions.length;
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw field boundary
+            ctx.strokeStyle = '#d4e2c6';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(padding, padding, width, height);
+            
+            // Draw paths
+            flightData.paths.forEach((path, index) => {
+                const startX = padding + path.startPosition.x * scaleX;
+                const startY = padding + path.startPosition.y * scaleY;
+                const endX = padding + path.endPosition.x * scaleX;
+                const endY = padding + path.endPosition.y * scaleY;
+                
+                // Determine path color based on status
+                let pathColor = '#d4e2c6'; // Planned
+                if (flightData.status === 'completed' || 
+                    (flightData.currentWaypoint && flightData.currentWaypoint.id > (index + 1) * 2)) {
+                    pathColor = '#7cb342'; // Completed
+                } else if (flightData.currentWaypoint && 
+                          flightData.currentWaypoint.id === (index + 1) * 2 + 1) {
+                    pathColor = '#ff8a65'; // Current
+                }
+                
+                ctx.strokeStyle = pathColor;
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                ctx.moveTo(startX, startY);
+                ctx.lineTo(endX, endY);
+                ctx.stroke();
+                
+                // Draw pass number
+                ctx.fillStyle = '#5a6c50';
+                ctx.font = '12px sans-serif';
+                ctx.fillText(`P${index + 1}`, (startX + endX) / 2 - 10, (startY + endY) / 2 - 5);
+            });
+            
+            // Draw home position
+            ctx.fillStyle = '#42a5f5';
+            ctx.beginPath();
+            ctx.arc(padding, padding, 8, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.fillStyle = '#5a6c50';
+            ctx.font = '10px sans-serif';
+            ctx.fillText('HOME', padding - 15, padding - 12);
+        }
+
+        function renderFlightStats(flightData) {
+            const statsGrid = document.getElementById('flightStatsGrid');
+            
+            statsGrid.innerHTML = `
+                <div class="stat-item">
+                    <div class="stat-item-label">Distance</div>
+                    <div class="stat-item-value">${flightData.totalDistance}m</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-label">Altitude</div>
+                    <div class="stat-item-value">${flightData.altitude}m</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-label">Speed</div>
+                    <div class="stat-item-value">${flightData.speed} m/s</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-label">Field Area</div>
+                    <div class="stat-item-value">${(flightData.fieldDimensions.area / 10000).toFixed(2)} ha</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-label">Image Interval</div>
+                    <div class="stat-item-value">${flightData.imageInterval}s</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-label">Overlap</div>
+                    <div class="stat-item-value">30%</div>
+                </div>
+            `;
+        }
+
+        function renderWaypoints(flightData) {
+            const waypointsList = document.getElementById('waypointsList');
+            
+            waypointsList.innerHTML = flightData.waypoints.map(waypoint => {
+                let iconSvg = '';
+                let statusClass = '';
+                
+                if (flightData.currentWaypoint && waypoint.id === flightData.currentWaypoint.id) {
+                    statusClass = 'active';
+                } else if (flightData.currentWaypoint && waypoint.id < flightData.currentWaypoint.id) {
+                    statusClass = 'completed';
+                } else if (flightData.status === 'completed') {
+                    statusClass = 'completed';
+                }
+                
+                if (waypoint.type === 'takeoff') {
+                    iconSvg = '<path d="M12 2v10M8 6l4-4 4 4"/>';
+                } else if (waypoint.type === 'landing') {
+                    iconSvg = '<path d="M12 22V12M8 18l4 4 4-4"/>';
+                } else {
+                    iconSvg = '<circle cx="12" cy="12" r="4"/>';
+                }
+                
+                const minutes = Math.floor(waypoint.timestamp / 60);
+                const seconds = Math.floor(waypoint.timestamp % 60);
+                
+                return `
+                    <div class="waypoint-item ${statusClass}">
+                        <div class="waypoint-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                ${iconSvg}
+                            </svg>
+                        </div>
+                        <div class="waypoint-content">
+                            <div class="waypoint-title">${waypoint.action}</div>
+                            <div class="waypoint-details">
+                                Position: (${Math.round(waypoint.position.x)}, ${Math.round(waypoint.position.y)}, ${waypoint.position.z}m)
+                            </div>
+                            <div class="waypoint-time">
+                                Timestamp: ${minutes}m ${seconds}s
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderWeather(flightData) {
+            const weatherCard = document.getElementById('weatherCard');
+            
+            weatherCard.innerHTML = `
+                <div class="weather-header">
+                    <div class="weather-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        </svg>
+                    </div>
+                    <div class="weather-temp">${flightData.weather.temperature}°C</div>
+                </div>
+                <div class="weather-details">
+                    <div>Conditions: ${flightData.weather.conditions}</div>
+                    <div>Wind: ${flightData.weather.windSpeed} km/h</div>
+                    <div>Visibility: ${flightData.weather.visibility}</div>
+                </div>
+            `;
+        }
+
+        function showEmptyState() {
+            const mainContent = document.querySelector('.main-content');
+            mainContent.innerHTML = `
+                <div class="empty-state">
+                    <div class="empty-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 3L4 9v12h16V9l-8-6z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </div>
+                    <h2 class="empty-title">No Flight Plan Found</h2>
+                    <p class="empty-text">Create a new flight plan to begin UAV operations</p>
+                    <button class="control-button primary" onclick="planNewFlight()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                        Create Flight Plan
+                    </button>
+                </div>
+            `;
+        }
+
+        // Control Functions
+        function planNewFlight() {
+            const farmerId = 'FARMER001';
+            const fieldId = 'FIELD001';
+            
+            const flightPlan = window.UAVFlightManager.generateFlightPlan(farmerId, fieldId);
+            window.UAVFlightManager.saveFlightPlan(flightPlan);
+            
+            currentFlight = flightPlan;
+            location.reload();
+        }
+
+        function startFlight() {
+            if (!currentFlight) return;
+            
+            const updatedFlight = window.UAVFlightManager.startFlightSimulation(currentFlight);
+            currentFlight = updatedFlight;
+            
+            location.reload();
+        }
+
+        function clearFlight() {
+            if (confirm('Are you sure you want to clear the current flight plan?')) {
+                window.UAVFlightManager.clearCurrentFlight();
+                location.reload();
+            }
+        }
+
+        function emergencyStop() {
+            if (confirm('Emergency stop will terminate the flight immediately. Continue?')) {
+                if (progressInterval) {
+                    clearInterval(progressInterval);
+                }
+                
+                currentFlight.status = 'completed';
+                window.UAVFlightManager.saveFlightPlan(currentFlight);
+                location.reload();
+            }
+        }
+
+        function viewResults() {
+            alert('Flight results view coming soon!');
+        }
+
+        function refreshFlightData() {
+            const refreshBtn = document.querySelector('.refresh-button');
+            refreshBtn.classList.add('spinning');
+            
+            setTimeout(() => {
+                location.reload();
+            }, 500);
+        }
+
+        function startProgressTracking() {
+            const progressSection = document.getElementById('flightProgressSection');
+            const imagesSection = document.getElementById('imagesSection');
+            
+            progressSection.classList.remove('hidden');
+            imagesSection.classList.remove('hidden');
+            
+            progressInterval = setInterval(() => {
+                updateFlightProgress();
+            }, 1000);
+        }
+
+        function updateFlightProgress() {
+            if (!currentFlight || currentFlight.status !== 'flying') {
+                if (progressInterval) {
+                    clearInterval(progressInterval);
+                }
+                return;
+            }
+            
+            const progress = window.UAVFlightManager.getFlightProgress(currentFlight);
+            
+            // Update progress bar
+            document.getElementById('progressPercentage').textContent = `${progress.progress}%`;
+            document.getElementById('progressBarFill').style.width = `${progress.progress}%`;
+            
+            // Update battery
+            const batteryLevel = Math.max(0, 100 - (progress.progress * 0.4));
+            document.getElementById('batteryLevel').textContent = `${Math.round(batteryLevel)}%`;
+            
+            const batteryIndicator = document.getElementById('batteryIndicator');
+            if (batteryLevel < 20) {
+                batteryIndicator.classList.add('low');
+            }
+            
+            // Update captured images
+            const capturedImages = Math.floor((progress.progress / 100) * currentFlight.estimatedImages);
+            document.getElementById('capturedImagesCount').textContent = capturedImages;
+            
+            // Update waypoints visualization
+            if (progress.currentWaypoint) {
+                currentFlight.currentWaypoint = progress.currentWaypoint;
+                renderWaypoints(currentFlight);
+                renderFlightPath(currentFlight);
+            }
+        }
+
+        // Listen for flight completion
+        window.addEventListener('uavFlightCompleted', (event) => {
+            if (progressInterval) {
+                clearInterval(progressInterval);
+            }
+            alert('Flight completed successfully!');
+            setTimeout(() => location.reload(), 1000);
+        });
+    </script>
+</body>
+</html>   
