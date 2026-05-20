@@ -1,0 +1,2659 @@
+{
+    "field_id": "field_B",
+    "farmer_id": "Farmer_2",
+    "total_images": 519,
+    "summary": {
+        "Healthy": 289,
+        "Stressed": 122,
+        "Diseased": 108
+    },
+    "all_predictions": [
+        {
+            "image": "imgB (88).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.73
+        },
+        {
+            "image": "imgB (76).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.8
+        },
+        {
+            "image": "imgB (32).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.55
+        },
+        {
+            "image": "imgB (214).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.84
+        },
+        {
+            "image": "imgB (109).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (96).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.59
+        },
+        {
+            "image": "imgB (152).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (26).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.91
+        },
+        {
+            "image": "imgB (252).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (49).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (89).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.54
+        },
+        {
+            "image": "imgB (70).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (210).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (206).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (65).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (273).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.9
+        },
+        {
+            "image": "imgB (109).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (43).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (166).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (82).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.92
+        },
+        {
+            "image": "imgB (219).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (1).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (8).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (31).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.82
+        },
+        {
+            "image": "imgB (52).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.88
+        },
+        {
+            "image": "imgB (61).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (121).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.87
+        },
+        {
+            "image": "imgB (203).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (104).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (59).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (67).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.87
+        },
+        {
+            "image": "imgB (21).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.92
+        },
+        {
+            "image": "imgB (118).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (4).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.64
+        },
+        {
+            "image": "imgB (29).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.9
+        },
+        {
+            "image": "imgB (135).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.47
+        },
+        {
+            "image": "imgB (40).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.87
+        },
+        {
+            "image": "imgB (169).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (211).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (199).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.88
+        },
+        {
+            "image": "imgB (50).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.6
+        },
+        {
+            "image": "imgB (41).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.74
+        },
+        {
+            "image": "imgB (186).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (64).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (233).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.75
+        },
+        {
+            "image": "imgB (88).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (127).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (106).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (2).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (102).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.63
+        },
+        {
+            "image": "imgB (212).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (62).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.62
+        },
+        {
+            "image": "imgB (224).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (213).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (38).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (28).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (218).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (18).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.63
+        },
+        {
+            "image": "imgB (55).jpg",
+            "prediction": "Diseased",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (188).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (89).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.87
+        },
+        {
+            "image": "imgB (33).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.84
+        },
+        {
+            "image": "imgB (71).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.76
+        },
+        {
+            "image": "imgB (80).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (75).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (139).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (106).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.63
+        },
+        {
+            "image": "imgB (29).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (86).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (113).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.81
+        },
+        {
+            "image": "imgB (228).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (195).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (157).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (192).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.89
+        },
+        {
+            "image": "imgB (92).JPG",
+            "prediction": "Diseased",
+            "confidence": 1.0
+        },
+        {
+            "image": "imgB (231).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (81).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (65).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (154).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.92
+        },
+        {
+            "image": "imgB (58).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (271).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (30).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (120).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (115).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.9
+        },
+        {
+            "image": "imgB (56).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (23).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (180).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (120).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.45
+        },
+        {
+            "image": "imgB (215).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (17).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.85
+        },
+        {
+            "image": "imgB (119).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.51
+        },
+        {
+            "image": "imgB (63).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (265).JPG",
+            "prediction": "Healthy",
+            "confidence": 1.0
+        },
+        {
+            "image": "imgB (107).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.83
+        },
+        {
+            "image": "imgB (155).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (93).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.84
+        },
+        {
+            "image": "imgB (128).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (64).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.92
+        },
+        {
+            "image": "imgB (145).JPG",
+            "prediction": "Healthy",
+            "confidence": 1.0
+        },
+        {
+            "image": "imgB (201).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (100).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (17).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.58
+        },
+        {
+            "image": "imgB (37).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.73
+        },
+        {
+            "image": "imgB (112).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.48
+        },
+        {
+            "image": "imgB (21).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (95).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (105).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (72).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (53).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.78
+        },
+        {
+            "image": "imgB (36).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (22).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (141).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (19).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.9
+        },
+        {
+            "image": "imgB (59).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.69
+        },
+        {
+            "image": "imgB (208).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (3).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (18).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.6
+        },
+        {
+            "image": "imgB (28).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (147).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (48).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.73
+        },
+        {
+            "image": "imgB (4).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.83
+        },
+        {
+            "image": "imgB (29).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (85).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (48).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.87
+        },
+        {
+            "image": "imgB (67).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.79
+        },
+        {
+            "image": "imgB (118).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (82).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (24).JPG",
+            "prediction": "Stressed",
+            "confidence": 1.0
+        },
+        {
+            "image": "imgB (107).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (109).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.92
+        },
+        {
+            "image": "imgB (39).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.54
+        },
+        {
+            "image": "imgB (74).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (227).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.78
+        },
+        {
+            "image": "imgB (243).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.85
+        },
+        {
+            "image": "imgB (47).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.9
+        },
+        {
+            "image": "imgB (9).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.54
+        },
+        {
+            "image": "imgB (91).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.78
+        },
+        {
+            "image": "imgB (39).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.72
+        },
+        {
+            "image": "imgB (239).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (10).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (90).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.91
+        },
+        {
+            "image": "imgB (179).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.7
+        },
+        {
+            "image": "imgB (209).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (205).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (66).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (27).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.66
+        },
+        {
+            "image": "imgB (149).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (220).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (78).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (238).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (72).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (1).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (119).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (189).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (60).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.39
+        },
+        {
+            "image": "imgB (45).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (226).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (80).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (81).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.57
+        },
+        {
+            "image": "imgB (241).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (31).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.67
+        },
+        {
+            "image": "imgB (63).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (83).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.5
+        },
+        {
+            "image": "imgB (260).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (280).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.67
+        },
+        {
+            "image": "imgB (30).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.78
+        },
+        {
+            "image": "imgB (279).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.8
+        },
+        {
+            "image": "imgB (146).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (131).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.84
+        },
+        {
+            "image": "imgB (73).JPG",
+            "prediction": "Healthy",
+            "confidence": 1.0
+        },
+        {
+            "image": "imgB (16).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (7).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (117).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (91).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (245).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (140).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (22).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.83
+        },
+        {
+            "image": "imgB (54).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (153).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (74).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (216).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (36).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.48
+        },
+        {
+            "image": "imgB (64).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.72
+        },
+        {
+            "image": "imgB (165).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (15).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (34).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.79
+        },
+        {
+            "image": "imgB (3).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.66
+        },
+        {
+            "image": "imgB (172).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (117).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (51).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.81
+        },
+        {
+            "image": "imgB (99).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (42).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.79
+        },
+        {
+            "image": "imgB (76).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (187).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.6
+        },
+        {
+            "image": "imgB (13).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.91
+        },
+        {
+            "image": "imgB (191).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.7
+        },
+        {
+            "image": "imgB (246).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (263).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.92
+        },
+        {
+            "image": "imgB (70).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.85
+        },
+        {
+            "image": "imgB (43).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (222).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.82
+        },
+        {
+            "image": "imgB (2).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.66
+        },
+        {
+            "image": "imgB (5).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.83
+        },
+        {
+            "image": "imgB (110).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (101).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (261).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (134).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (174).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.89
+        },
+        {
+            "image": "imgB (69).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (259).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.76
+        },
+        {
+            "image": "imgB (253).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (148).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.84
+        },
+        {
+            "image": "imgB (197).jpg",
+            "prediction": "Diseased",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (84).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.9
+        },
+        {
+            "image": "imgB (72).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.84
+        },
+        {
+            "image": "imgB (68).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (14).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (103).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (23).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.83
+        },
+        {
+            "image": "imgB (74).JPG",
+            "prediction": "Stressed",
+            "confidence": 1.0
+        },
+        {
+            "image": "imgB (37).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (46).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.83
+        },
+        {
+            "image": "imgB (38).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.91
+        },
+        {
+            "image": "imgB (14).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (3).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (116).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (44).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.64
+        },
+        {
+            "image": "imgB (164).JPG",
+            "prediction": "Healthy",
+            "confidence": 1.0
+        },
+        {
+            "image": "imgB (87).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (86).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (81).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.72
+        },
+        {
+            "image": "imgB (237).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (30).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (59).JPG",
+            "prediction": "Healthy",
+            "confidence": 1.0
+        },
+        {
+            "image": "imgB (12).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (6).JPG",
+            "prediction": "Stressed",
+            "confidence": 1.0
+        },
+        {
+            "image": "imgB (20).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.88
+        },
+        {
+            "image": "imgB (57).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.89
+        },
+        {
+            "image": "imgB (93).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (39).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (104).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (66).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.87
+        },
+        {
+            "image": "imgB (105).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (94).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.46
+        },
+        {
+            "image": "imgB (67).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (170).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (21).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (84).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.79
+        },
+        {
+            "image": "imgB (41).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.9
+        },
+        {
+            "image": "imgB (185).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (99).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.86
+        },
+        {
+            "image": "imgB (51).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.61
+        },
+        {
+            "image": "imgB (73).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.58
+        },
+        {
+            "image": "imgB (269).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (98).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.92
+        },
+        {
+            "image": "imgB (204).JPG",
+            "prediction": "Healthy",
+            "confidence": 1.0
+        },
+        {
+            "image": "imgB (54).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (35).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.92
+        },
+        {
+            "image": "imgB (114).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (25).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.79
+        },
+        {
+            "image": "imgB (23).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.84
+        },
+        {
+            "image": "imgB (54).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (76).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.88
+        },
+        {
+            "image": "imgB (144).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.88
+        },
+        {
+            "image": "imgB (262).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.81
+        },
+        {
+            "image": "imgB (159).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.91
+        },
+        {
+            "image": "imgB (116).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (250).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (111).JPG",
+            "prediction": "Healthy",
+            "confidence": 1.0
+        },
+        {
+            "image": "imgB (162).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (10).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.92
+        },
+        {
+            "image": "imgB (94).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.53
+        },
+        {
+            "image": "imgB (207).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (15).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.8
+        },
+        {
+            "image": "imgB (1).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.88
+        },
+        {
+            "image": "imgB (35).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.82
+        },
+        {
+            "image": "imgB (257).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.92
+        },
+        {
+            "image": "imgB (96).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.91
+        },
+        {
+            "image": "imgB (68).JPG",
+            "prediction": "Stressed",
+            "confidence": 1.0
+        },
+        {
+            "image": "imgB (101).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (171).JPG",
+            "prediction": "Healthy",
+            "confidence": 1.0
+        },
+        {
+            "image": "imgB (16).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.86
+        },
+        {
+            "image": "imgB (242).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (50).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (45).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.92
+        },
+        {
+            "image": "imgB (123).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.92
+        },
+        {
+            "image": "imgB (138).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.78
+        },
+        {
+            "image": "imgB (117).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.77
+        },
+        {
+            "image": "imgB (85).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (91).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.69
+        },
+        {
+            "image": "imgB (80).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (196).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.9
+        },
+        {
+            "image": "imgB (95).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.89
+        },
+        {
+            "image": "imgB (95).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.59
+        },
+        {
+            "image": "imgB (66).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.72
+        },
+        {
+            "image": "imgB (102).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (46).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.87
+        },
+        {
+            "image": "imgB (111).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.76
+        },
+        {
+            "image": "imgB (14).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.83
+        },
+        {
+            "image": "imgB (25).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.81
+        },
+        {
+            "image": "imgB (102).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (110).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (52).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (94).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.9
+        },
+        {
+            "image": "imgB (62).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.8
+        },
+        {
+            "image": "imgB (264).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (111).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (82).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (78).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.7
+        },
+        {
+            "image": "imgB (193).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (160).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (52).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (5).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (56).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.78
+        },
+        {
+            "image": "imgB (101).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (47).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.91
+        },
+        {
+            "image": "imgB (78).jpg",
+            "prediction": "Diseased",
+            "confidence": 0.81
+        },
+        {
+            "image": "imgB (37).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.65
+        },
+        {
+            "image": "imgB (49).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (40).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (108).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.63
+        },
+        {
+            "image": "imgB (158).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (83).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.66
+        },
+        {
+            "image": "imgB (270).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (200).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (202).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (190).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (62).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (41).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.83
+        },
+        {
+            "image": "imgB (267).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.89
+        },
+        {
+            "image": "imgB (178).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (73).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.46
+        },
+        {
+            "image": "imgB (150).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (113).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (57).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (274).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.87
+        },
+        {
+            "image": "imgB (240).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (19).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.88
+        },
+        {
+            "image": "imgB (42).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.47
+        },
+        {
+            "image": "imgB (258).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.89
+        },
+        {
+            "image": "imgB (71).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (112).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (126).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.92
+        },
+        {
+            "image": "imgB (97).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.72
+        },
+        {
+            "image": "imgB (276).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (4).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (63).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.54
+        },
+        {
+            "image": "imgB (61).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.87
+        },
+        {
+            "image": "imgB (92).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.81
+        },
+        {
+            "image": "imgB (236).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (198).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (133).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (77).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.92
+        },
+        {
+            "image": "imgB (184).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (24).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (100).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (132).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.92
+        },
+        {
+            "image": "imgB (181).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.86
+        },
+        {
+            "image": "imgB (71).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.69
+        },
+        {
+            "image": "imgB (77).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.88
+        },
+        {
+            "image": "imgB (75).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.81
+        },
+        {
+            "image": "imgB (235).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (53).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.59
+        },
+        {
+            "image": "imgB (57).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.56
+        },
+        {
+            "image": "imgB (87).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.69
+        },
+        {
+            "image": "imgB (161).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (9).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (103).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.57
+        },
+        {
+            "image": "imgB (10).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.85
+        },
+        {
+            "image": "imgB (223).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (99).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (88).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.91
+        },
+        {
+            "image": "imgB (182).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (83).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (108).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (17).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (266).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (38).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (268).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (247).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (26).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.79
+        },
+        {
+            "image": "imgB (254).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.92
+        },
+        {
+            "image": "imgB (93).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.86
+        },
+        {
+            "image": "imgB (151).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.92
+        },
+        {
+            "image": "imgB (79).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (24).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (11).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (13).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.54
+        },
+        {
+            "image": "imgB (168).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (7).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.75
+        },
+        {
+            "image": "imgB (108).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.84
+        },
+        {
+            "image": "imgB (69).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (124).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (12).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (75).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.48
+        },
+        {
+            "image": "imgB (173).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (221).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.81
+        },
+        {
+            "image": "imgB (183).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (79).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (60).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.88
+        },
+        {
+            "image": "imgB (97).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (43).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (32).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.88
+        },
+        {
+            "image": "imgB (36).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.81
+        },
+        {
+            "image": "imgB (68).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (251).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (176).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.89
+        },
+        {
+            "image": "imgB (119).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (28).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.79
+        },
+        {
+            "image": "imgB (5).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.56
+        },
+        {
+            "image": "imgB (255).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (60).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.49
+        },
+        {
+            "image": "imgB (272).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.46
+        },
+        {
+            "image": "imgB (6).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.91
+        },
+        {
+            "image": "imgB (142).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (40).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (106).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.65
+        },
+        {
+            "image": "imgB (35).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.45
+        },
+        {
+            "image": "imgB (275).JPG",
+            "prediction": "Healthy",
+            "confidence": 1.0
+        },
+        {
+            "image": "imgB (70).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (51).jpg",
+            "prediction": "Diseased",
+            "confidence": 0.65
+        },
+        {
+            "image": "imgB (103).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.43
+        },
+        {
+            "image": "imgB (32).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (112).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.91
+        },
+        {
+            "image": "imgB (234).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (27).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (34).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (230).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (79).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.74
+        },
+        {
+            "image": "imgB (9).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.5
+        },
+        {
+            "image": "imgB (22).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.91
+        },
+        {
+            "image": "imgB (110).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.55
+        },
+        {
+            "image": "imgB (69).jpg",
+            "prediction": "Diseased",
+            "confidence": 0.81
+        },
+        {
+            "image": "imgB (55).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (12).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (96).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (249).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (90).JPG",
+            "prediction": "Stressed",
+            "confidence": 1.0
+        },
+        {
+            "image": "imgB (11).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.86
+        },
+        {
+            "image": "imgB (125).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.87
+        },
+        {
+            "image": "imgB (86).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (15).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.91
+        },
+        {
+            "image": "imgB (104).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (116).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.56
+        },
+        {
+            "image": "imgB (98).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.8
+        },
+        {
+            "image": "imgB (100).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.48
+        },
+        {
+            "image": "imgB (44).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.76
+        },
+        {
+            "image": "imgB (163).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.87
+        },
+        {
+            "image": "imgB (26).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (65).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (46).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (33).JPG",
+            "prediction": "Stressed",
+            "confidence": 1.0
+        },
+        {
+            "image": "imgB (19).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (122).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (18).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (58).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.65
+        },
+        {
+            "image": "imgB (114).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (84).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (13).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (77).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.88
+        },
+        {
+            "image": "imgB (33).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.6
+        },
+        {
+            "image": "imgB (8).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.82
+        },
+        {
+            "image": "imgB (2).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.43
+        },
+        {
+            "image": "imgB (118).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.61
+        },
+        {
+            "image": "imgB (229).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.9
+        },
+        {
+            "image": "imgB (20).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (53).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.89
+        },
+        {
+            "image": "imgB (107).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.92
+        },
+        {
+            "image": "imgB (25).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.55
+        },
+        {
+            "image": "imgB (31).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.9
+        },
+        {
+            "image": "imgB (85).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.69
+        },
+        {
+            "image": "imgB (98).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.61
+        },
+        {
+            "image": "imgB (115).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (87).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (156).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.88
+        },
+        {
+            "image": "imgB (225).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (42).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (115).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.8
+        },
+        {
+            "image": "imgB (277).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.9
+        },
+        {
+            "image": "imgB (20).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (167).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.88
+        },
+        {
+            "image": "imgB (50).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (232).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (143).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.91
+        },
+        {
+            "image": "imgB (34).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (49).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (27).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (61).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.59
+        },
+        {
+            "image": "imgB (45).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.84
+        },
+        {
+            "image": "imgB (129).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.47
+        },
+        {
+            "image": "imgB (47).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (48).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.92
+        },
+        {
+            "image": "imgB (244).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (44).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.65
+        },
+        {
+            "image": "imgB (248).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (137).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.84
+        },
+        {
+            "image": "imgB (8).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.89
+        },
+        {
+            "image": "imgB (256).JPG",
+            "prediction": "Healthy",
+            "confidence": 1.0
+        },
+        {
+            "image": "imgB (7).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.53
+        },
+        {
+            "image": "imgB (130).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (175).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (97).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.92
+        },
+        {
+            "image": "imgB (194).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (90).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.67
+        },
+        {
+            "image": "imgB (136).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (105).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.85
+        },
+        {
+            "image": "imgB (58).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (278).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (89).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.68
+        },
+        {
+            "image": "imgB (56).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (55).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.56
+        },
+        {
+            "image": "imgB (11).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.94
+        },
+        {
+            "image": "imgB (92).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.99
+        },
+        {
+            "image": "imgB (113).JPG",
+            "prediction": "Stressed",
+            "confidence": 0.88
+        },
+        {
+            "image": "imgB (177).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.96
+        },
+        {
+            "image": "imgB (6).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.84
+        },
+        {
+            "image": "imgB (217).JPG",
+            "prediction": "Healthy",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (16).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.89
+        },
+        {
+            "image": "imgB (114).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.94
+        }
+    ],
+    "samples": [
+        {
+            "image": "imgB (1).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.95
+        },
+        {
+            "image": "imgB (10).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.85
+        },
+        {
+            "image": "imgB (100).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (101).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (102).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.93
+        },
+        {
+            "image": "imgB (103).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.57
+        },
+        {
+            "image": "imgB (104).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.98
+        },
+        {
+            "image": "imgB (105).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.85
+        },
+        {
+            "image": "imgB (106).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.97
+        },
+        {
+            "image": "imgB (107).JPG",
+            "prediction": "Diseased",
+            "confidence": 0.92
+        }
+    ]
+}
